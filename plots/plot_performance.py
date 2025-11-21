@@ -7,7 +7,7 @@ cpu_times = []
 gpu_times = []
 speedups = []
 
-with open('../results.csv', 'r') as f:
+with open('results.csv', 'r') as f:
     reader = csv.DictReader(f)
     for row in reader:
         sizes.append(int(row['Size']))
@@ -25,5 +25,5 @@ plt.xscale('log', base=2)
 plt.yscale('log')
 plt.legend()
 plt.grid(True, which="both", ls="--", lw=0.5)
-plt.savefig('../performance.png', dpi=300)
+plt.savefig('plots/performance.png', dpi=300)
 print("Saved performance.png")
